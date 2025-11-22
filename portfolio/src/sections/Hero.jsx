@@ -5,7 +5,7 @@ import { FloatingOrbs } from "../components/floating-orbs";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { socialLinks } from "../data/constants";
 import * as LucideIcons from "lucide-react";
-import aboutImg from '../assets/image.jpeg'
+import aboutImg from '../assets/image.png'
 
 const themeColor = "#7b8e86"
 
