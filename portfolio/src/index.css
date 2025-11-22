@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: 0 0% 100%;
+  --color-foreground: 240 10% 3.9%;
+  --color-primary: 164 16% 82%; /* #d7e2dc */
+  --color-primary-foreground: 240 5.9% 10%;
+  --color-accent: 164 16% 72%;
+  --color-accent-foreground: 240 5.9% 10%;
+  --color-muted: 240 4.8% 95.9%;
+  --color-muted-foreground: 240 3.8% 46.1%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 240 10% 3.9%;
+  --color-border: 240 5.9% 90%;
+}
+
+.dark {
+  --color-background: 240 10% 3.9%;
+  --color-foreground: 0 0% 98%;
+  --color-primary: 164 16% 82%; /* #d7e2dc */
+  --color-primary-foreground: 240 5.9% 10%;
+  --color-accent: 164 16% 72%;
+  --color-accent-foreground: 0 0% 98%;
+  --color-muted: 240 3.7% 15.9%;
+  --color-muted-foreground: 240 5% 64.9%;
+  --color-card: 240 10% 3.9%;
+  --color-card-foreground: 0 0% 98%;
+  --color-border: 240 3.7% 15.9%;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, hsl(var(--color-primary)), hsl(var(--color-accent)), hsl(var(--color-primary)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--color-background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-primary));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-accent));
+}
