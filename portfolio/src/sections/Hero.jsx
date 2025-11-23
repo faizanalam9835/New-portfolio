@@ -11,9 +11,8 @@ const themeColor = "#7b8e86"
 
 export const Hero = ({ opacity, scale }) => {
   const handleDownloadResume = () => {
-    window.open(resumePDF, "_blank");
     const link = document.createElement("a");
-    link.href = resumePDF;
+    link.href = "/Faizan_Alam_Resume.pdf"; // path relative to public folder
     link.download = "Faizan_Alam_Resume.pdf";
     document.body.appendChild(link);
     link.click();
