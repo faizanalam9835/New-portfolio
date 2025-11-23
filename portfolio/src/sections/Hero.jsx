@@ -20,11 +20,10 @@ export const Hero = ({ opacity, scale }) => {
     document.body.removeChild(link);
   };
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      <FloatingOrbs />
-
-      <div className="container mx-auto px-4 py-24 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-4 sm:px-6">
+      {/* LEFT + RIGHT GRID */}
+      <div className="container mx-auto relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* LEFT CONTENT */}
           <motion.div
@@ -32,6 +31,7 @@ export const Hero = ({ opacity, scale }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             style={{ opacity, scale }}
+            className="text-center md:text-left"
           >
             <motion.div
               initial={{ opacity: 0 }}
@@ -46,7 +46,7 @@ export const Hero = ({ opacity, scale }) => {
               <span style={{ color: themeColor }}>👋 Welcome to my portfolio</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-display mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display mb-4 md:mb-6 leading-tight">
               Hi, I'm{" "}
               <motion.span
                 className="font-bold"
@@ -69,7 +69,7 @@ export const Hero = ({ opacity, scale }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-xl mb-2"
+              className="text-lg sm:text-xl mb-2"
               style={{ color: themeColor }}
             >
               Aspiring Full Stack Developer
@@ -79,7 +79,7 @@ export const Hero = ({ opacity, scale }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="text-lg mb-8 max-w-lg"
+              className="text-base sm:text-lg mb-6 sm:mb-8 max-w-md mx-auto md:mx-0"
               style={{ color: "#cccccc" }}
             >
               Passionate about building modern, fast, and scalable web applications
@@ -91,11 +91,10 @@ export const Hero = ({ opacity, scale }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
-              className="flex gap-4 flex-wrap"
+              className="flex flex-wrap justify-center md:justify-start gap-4"
             >
-              {/* DOWNLOAD RESUME */}
               <Button
-                 onClick={handleDownloadResume}
+                onClick={handleDownloadResume}
                 size="lg"
                 className="group"
                 style={{
@@ -105,7 +104,7 @@ export const Hero = ({ opacity, scale }) => {
                 }}
                 asChild
               >
-                <a href="/Faizan_Alam_Resume.pdf" download="Faizan_Alam_Resume">
+                <a>
                   Download Resume
                   <motion.span
                     animate={{ y: [0, 4, 0] }}
@@ -135,7 +134,7 @@ export const Hero = ({ opacity, scale }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
-              className="flex gap-4 mt-8"
+              className="flex justify-center md:justify-start gap-4 mt-6 sm:mt-8"
             >
               {socialLinks.map((social, idx) => {
                 const LucideIcon = LucideIcons[social.icon];
@@ -167,7 +166,7 @@ export const Hero = ({ opacity, scale }) => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT CONTENT — BIGGER IMAGE */}
+          {/* RIGHT CONTENT — IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -177,11 +176,11 @@ export const Hero = ({ opacity, scale }) => {
             <motion.div
               animate={{ rotate: [0, 2.5, 0, -2.5, 0] }}
               transition={{ duration: 10, repeat: Infinity }}
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
             >
               <div
-                className="relative rounded-3xl overflow-hidden shadow-2xl"
+                className="relative rounded-3xl overflow-hidden shadow-2xl mx-auto"
                 style={{
-                  width: "520px", // ⭐ INCREASED IMAGE SIZE
                   border: `4px solid ${themeColor}70`,
                 }}
               >
@@ -219,9 +218,7 @@ export const Hero = ({ opacity, scale }) => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="w-6 h-10 rounded-full flex justify-center pt-2"
-          style={{
-            border: `2px solid ${themeColor}`,
-          }}
+          style={{ border: `2px solid ${themeColor}` }}
         >
           <motion.div
             animate={{ opacity: [0, 1, 0] }}
